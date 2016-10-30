@@ -47,15 +47,9 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>1.4.0.RELEASE</version>
-			</plugin>
-		 
-			 <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxb2-maven-plugin</artifactId>
-				<version>1.6</version>
+				<version>2.1</version>
 				<executions>
 					<execution>
 						<id>xjc</id>
@@ -72,20 +66,28 @@
 							-->
 							<!--<outputDirectory>${project.basedir}/src/main/java</outputDirectory>-->
 							
-							<schemaDirectory>${project.basedir}/src/main/resources/schemas</schemaDirectory>
-							<outputDirectory>${project.basedir}/src/main/java/z1f</outputDirectory>
+							<!--<schemaDirectory>${project.basedir}/src/main/resources/schemas</schemaDirectory>-->
+							<!--<outputDirectory>${project.basedir}/src/main/java/z1f</outputDirectory>-->
 							<!--这个非常重要啦，要不然，你会干掉整个项目的！！！！-->
-							<clearOutputDir>false</clearOutputDir>
+							<!--<clearOutputDir>false</clearOutputDir>-->
 							<!--这部分为2.x的配置-->
 							<packageName>z1f.models</packageName>
 							<sources>
-								<source>src/main/z1f/resources/schemas</source>
+								<source>src/main/java/z1f/resources/schemas</source>
 							</sources>
 							
 							
 							
 				</configuration>
 			</plugin>
+		
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.4.0.RELEASE</version>
+			</plugin>
+		 
+			 
 		</plugins>
 	</build>
 	
